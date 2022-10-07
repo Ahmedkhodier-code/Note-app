@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi"
+    app:startDestination="@id/authenticationFragment">
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.lastiti.detail.detailFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/newDataFragment"
+        android:name="com.example.lastiti.newdata.NewDataFragment"
+        android:label="NewDataFragment"
+        tools:layout="@layout/fragment_new_data" />
+    <fragment
+        android:id="@+id/authenticationFragment"
+        android:name="com.example.lastiti.Authentication.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication">
+        <action
+            android:id="@+id/action_authenticationFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/authenticationFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_view_pager"
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.lastiti.viewPager.ViewPagerFragment"
+        android:label="ViewPagerFragment" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_newDataFragment"
+            app:destination="@id/newDataFragment" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_dataFragment"
+            app:destination="@id/dataFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+</navigation>

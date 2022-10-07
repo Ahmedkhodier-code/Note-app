@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Iti Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vertical">Vertical</string>
+    <string name="horizontal">horizontal</string>
+    <string name="grid">grid</string>
+    <string name="fab">FAB</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="hobbies">hobbies</string>
+    <string name="select_a_photo">select a photo</string>
+    <string name="save">save</string>
+    <string name="select">select</string>
+    <string name="dog_photo">note photo</string>
+    <string name="delete">DELETE</string>
+    <string name="log_in">Log In</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="remember_me">Remember me?</string>
+    <string name="login">Login</string>
+    <string name="sign_up">SignUP</string>
+    <string name="need_account">need account ?</string>
+    <string name="have_an_account">have an account ?</string>
+    <string name="time">time</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="more">More</string>
+</resources>

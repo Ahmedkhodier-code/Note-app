@@ -1,0 +1,39 @@
+<!-- two_pane.xml -->
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".MainActivity">
+
+    <!-- The first child view becomes the left pane. When the combined
+         desired width (expressed using android:layout_width) would
+         not fit on-screen at once, the right pane is permitted to
+         overlap the left. -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/recyclerView"
+        android:name="com.example.lastiti.forTablet.recyclerviewFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:scrollbars="vertical"
+        app:navGraph="@navigation/navi" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray" />
+    <!-- The second child becomes the right (content) pane. In this
+         example, android:layout_weight is used to expand this detail pane
+         to consume leftover available space when the
+         the entire window is wide enough to fit both the left and right pane.-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/detail_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="7"
+        app:navGraph="@navigation/navi_tablet" />
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>

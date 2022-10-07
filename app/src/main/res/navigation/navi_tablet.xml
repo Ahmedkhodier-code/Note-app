@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_tablet"
+    app:startDestination="@id/detailFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.lastiti.detail.detailFragment"
+        android:label="detailFragment"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_newDataFragment2"
+            app:destination="@id/newDataFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/newDataFragment2"
+        android:name="com.example.lastiti.newdata.NewDataFragment"
+        android:label="NewDataFragment"
+        tools:layout="@layout/fragment_new_data" >
+        <action
+            android:id="@+id/action_newDataFragment2_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
