@@ -1,11 +1,16 @@
 package com.example.lastiti.recyclerViewFragment;
 
 import android.annotation.SuppressLint;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -34,7 +39,6 @@ public class MyListAdapterLinear extends ListAdapter<Note, MyListAdapterLinear.V
         return new ViewHolder(binding);
     }
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Note note = getItem(position);
@@ -42,7 +46,7 @@ public class MyListAdapterLinear extends ListAdapter<Note, MyListAdapterLinear.V
             viewModel.selectItem(note);
             Navigation.findNavController(view).navigate(R.id.action_viewPagerFragment_to_dataFragment);
         });
-        holder.bind(note);
+        holder.bind(note, position);
     }
 
 
@@ -68,8 +72,18 @@ public class MyListAdapterLinear extends ListAdapter<Note, MyListAdapterLinear.V
             this.binding = binding;
         }
 
-        void bind(Note note) {
+
+        void bind(Note note, int num) {
             binding.setNote(note);
+            Log.i("MyListAdapterLinear"," "+num % 3);
+            switch (num % 3) {
+                case 0:binding.selected.setCardBackgroundColor(ColorStateList.valueOf(Color.parseColor("#e1f5fe")));
+                    break;
+                case 1:binding.selected.setCardBackgroundColor(ColorStateList.valueOf(Color.parseColor("#fff8e1")));
+                    break;
+                case 2:binding.selected.setCardBackgroundColor(ColorStateList.valueOf(Color.parseColor("#fce4ec")));
+                    break;
+            }
             binding.executePendingBindings();
         }
     }

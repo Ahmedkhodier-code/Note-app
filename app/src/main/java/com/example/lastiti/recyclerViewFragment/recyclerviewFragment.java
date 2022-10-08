@@ -1,5 +1,6 @@
 package com.example.lastiti.recyclerViewFragment;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,7 +43,13 @@ public class recyclerviewFragment extends Fragment {
     }
 
     public void setRecyclerViewLayoutManager() {
-        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+        GridLayoutManager mLayoutManager = new GridLayoutManager(requireContext(), 2);
+        mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                return (position == 0) ? 2 : 1;
+            }
+        });
         final MyListAdapterLinear adapter = new MyListAdapterLinear(new MyListAdapterLinear.NoteDiff(), viewModel);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(mLayoutManager);
