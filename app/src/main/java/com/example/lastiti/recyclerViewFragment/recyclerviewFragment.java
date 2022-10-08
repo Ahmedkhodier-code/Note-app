@@ -44,12 +44,6 @@ public class recyclerviewFragment extends Fragment {
 
     public void setRecyclerViewLayoutManager() {
         GridLayoutManager mLayoutManager = new GridLayoutManager(requireContext(), 2);
-        mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                return (position == 0) ? 2 : 1;
-            }
-        });
         final MyListAdapterLinear adapter = new MyListAdapterLinear(new MyListAdapterLinear.NoteDiff(), viewModel);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(mLayoutManager);

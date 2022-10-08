@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.lastiti.repo.NoteRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class NoteViewModel extends AndroidViewModel {
@@ -49,6 +50,9 @@ public class NoteViewModel extends AndroidViewModel {
 
 
     public LiveData<List<Note>> getmAllNotes() {
+        List<Note> Note = mAllNotes.getValue();
+        Objects.requireNonNull(Note).add(new Note("", "", "", 0));
+        LiveData<List<Note>> newNote = mAllNotes;
         return mAllNotes;
     }
 
@@ -60,7 +64,7 @@ public class NoteViewModel extends AndroidViewModel {
         mRepository.delete(note);
     }
 
-    public void update(Note note , Note note1) {
+    public void update(Note note, Note note1) {
         mRepository.delete(note);
         mRepository.insert(note1);
     }

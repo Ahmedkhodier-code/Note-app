@@ -6,6 +6,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.example.lastiti.recyclerViewFragment.MyListAdapterLinear;
+
 @Entity(tableName = "notes_table")
 public class Note {
     @PrimaryKey(autoGenerate = true)
@@ -18,6 +20,7 @@ public class Note {
     public String time;
     @ColumnInfo(name = "image")
     public int Image;
+    public Boolean Footer;
 
 
     public Note(String title, String description, String time, int Image) {
@@ -25,6 +28,10 @@ public class Note {
         this.description = description;
         this.time = time;
         this.Image = Image;
+    }
+
+    public Note(boolean Footer) {
+        this.Footer = Footer;
     }
 
     public String getTitle() {
@@ -62,6 +69,6 @@ public class Note {
 
     @NonNull
     public Note getNote() {
-        return new Note(title, description,time, Image);
+        return new Note(title, description, time, Image);
     }
 }
