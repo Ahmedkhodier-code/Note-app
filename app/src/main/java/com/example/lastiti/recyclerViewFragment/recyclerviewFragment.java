@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,19 +19,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lastiti.R;
-import com.example.lastiti.database.Note;
-import com.example.lastiti.database.NoteViewModel;
+import com.example.lastiti.database.note.NoteViewModel;
 import com.example.lastiti.databinding.FragmentRecyclerviewBinding;
 
 import java.io.File;
-import java.util.Date;
-import java.util.Objects;
 
 
 public class recyclerviewFragment extends Fragment {
     String filename = "auth";
     private FragmentRecyclerviewBinding binding;
-    protected RecyclerView.LayoutManager mLayoutManager;
     NoteViewModel viewModel;
 
     @Override
@@ -45,7 +41,7 @@ public class recyclerviewFragment extends Fragment {
     }
 
     public void setRecyclerViewLayoutManager() {
-        mLayoutManager = new GridLayoutManager(requireContext(), 2);
+        StaggeredGridLayoutManager mLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         final MyListAdapterLinear adapter = new MyListAdapterLinear(new MyListAdapterLinear.NoteDiff(), viewModel);
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(mLayoutManager);

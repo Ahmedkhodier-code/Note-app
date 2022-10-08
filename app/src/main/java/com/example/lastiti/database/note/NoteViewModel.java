@@ -1,4 +1,4 @@
-package com.example.lastiti.database;
+package com.example.lastiti.database.note;
 
 
 import android.app.Application;

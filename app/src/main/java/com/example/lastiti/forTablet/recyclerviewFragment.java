@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lastiti.database.NoteViewModel;
+import com.example.lastiti.database.note.NoteViewModel;
 import com.example.lastiti.databinding.FragmentRecyclerviewBinding;
 
 public class recyclerviewFragment extends Fragment {

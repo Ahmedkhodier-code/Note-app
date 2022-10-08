@@ -6,7 +6,7 @@
 
         <variable
             name="note"
-            type="com.example.lastiti.database.Note" />
+            type="com.example.lastiti.database.note.Note" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

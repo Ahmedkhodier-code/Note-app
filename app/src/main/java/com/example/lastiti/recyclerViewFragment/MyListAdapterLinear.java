@@ -3,7 +3,6 @@ package com.example.lastiti.recyclerViewFragment;
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -13,8 +12,8 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lastiti.R;
-import com.example.lastiti.database.Note;
-import com.example.lastiti.database.NoteViewModel;
+import com.example.lastiti.database.note.Note;
+import com.example.lastiti.database.note.NoteViewModel;
 import com.example.lastiti.databinding.ListItemLinearBinding;
 
 

@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.lastiti.R;
-import com.example.lastiti.database.Note;
-import com.example.lastiti.database.NoteViewModel;
+import com.example.lastiti.database.note.Note;
+import com.example.lastiti.database.note.NoteViewModel;
 import com.example.lastiti.databinding.FragmentNewDataBinding;
 
 import java.text.SimpleDateFormat;

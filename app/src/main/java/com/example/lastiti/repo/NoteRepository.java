@@ -5,9 +5,9 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 import androidx.room.Room;
 
-import com.example.lastiti.AppDatabase;
-import com.example.lastiti.database.Note;
-import com.example.lastiti.database.NoteDao;
+import com.example.lastiti.database.note.NoteDatabase;
+import com.example.lastiti.database.note.Note;
+import com.example.lastiti.database.note.NoteDao;
 
 import java.util.List;
 
@@ -21,9 +21,9 @@ public class NoteRepository {
     // See the BasicSample in the android-architecture-components repository at
     // https://github.com/googlesamples
     public NoteRepository(Application application) {
-        AppDatabase db = Room.databaseBuilder(application, AppDatabase.class, "notes_table").build();
+        NoteDatabase db = Room.databaseBuilder(application, NoteDatabase.class, "notes_table").build();
 //        AppDatabase db = AppDatabase.getDatabase(application);
-        mNoteDao = db.dogDao();
+        mNoteDao = db.noteDao();
         mAllNotes = mNoteDao.getAll();
     }
 
@@ -36,9 +36,9 @@ public class NoteRepository {
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
     public void insert(Note note) {
-        AppDatabase.databaseWriteExecutor.execute(() -> mNoteDao.insertAll(note));
+        NoteDatabase.databaseWriteExecutor.execute(() -> mNoteDao.insertAll(note));
     }
     public void delete(Note note) {
-        AppDatabase.databaseWriteExecutor.execute(() -> mNoteDao.delete(note));
+        NoteDatabase.databaseWriteExecutor.execute(() -> mNoteDao.delete(note));
     }
 }

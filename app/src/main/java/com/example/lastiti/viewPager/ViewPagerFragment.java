@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
@@ -13,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lastiti.R;
-import com.example.lastiti.database.NoteViewModel;
 import com.example.lastiti.databinding.FragmentViewPagerBinding;
 import com.example.lastiti.recyclerViewFragment.recyclerviewFragment;
 
