@@ -53,7 +53,7 @@ public class NewDataFragment extends Fragment {
         binding.save.setOnClickListener(view -> {
             Toast.makeText(getContext(), "new Note added", Toast.LENGTH_LONG).show();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z", Locale.getDefault());
-            Note newNote = new Note(Objects.requireNonNull(binding.title1.getText()).toString(), Objects.requireNonNull(binding.desc.getText()).toString(), sdf.format(new Date()), Image_int[0]);
+            Note newNote = new Note(Objects.requireNonNull(binding.title1.getText()).toString(), Objects.requireNonNull(binding.desc.getText()).toString(), sdf.format(new Date()), Image_int[0] , false);
             viewModel.insert(newNote);
             if (Boolean.TRUE.equals(viewModel.getFlag().getValue())) {
                 Navigation.findNavController(binding.getRoot()).navigate(R.id.action_newDataFragment2_to_detailFragment);

@@ -23,14 +23,11 @@ public class Note {
     public Boolean Footer;
 
 
-    public Note(String title, String description, String time, int Image) {
+    public Note(String title, String description, String time, int Image ,boolean Footer) {
         this.title = title;
         this.description = description;
         this.time = time;
         this.Image = Image;
-    }
-
-    public Note(boolean Footer) {
         this.Footer = Footer;
     }
 
@@ -69,6 +66,6 @@ public class Note {
 
     @NonNull
     public Note getNote() {
-        return new Note(title, description, time, Image);
+        return new Note(title, description, time, Image , false);
     }
 }

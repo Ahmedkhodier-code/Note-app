@@ -50,9 +50,6 @@ public class NoteViewModel extends AndroidViewModel {
 
 
     public LiveData<List<Note>> getmAllNotes() {
-        List<Note> Note = mAllNotes.getValue();
-        Objects.requireNonNull(Note).add(new Note("", "", "", 0));
-        LiveData<List<Note>> newNote = mAllNotes;
         return mAllNotes;
     }
 
