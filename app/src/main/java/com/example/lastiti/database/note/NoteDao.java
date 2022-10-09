@@ -12,7 +12,7 @@ import java.util.List;
 @Dao
 public interface NoteDao {
 
-    @Query("SELECT * FROM notes_table ORDER BY uid ASC")
+    @Query("SELECT * FROM notes_table ORDER BY uid DESC")
     LiveData<List<Note>> getAll();
 
     @Insert

@@ -28,7 +28,7 @@ public abstract class NoteDatabase extends RoomDatabase {
             synchronized (NoteDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    NoteDatabase.class, "word_database")
+                                    NoteDatabase.class, "notes_table")
                             .addCallback(sRoomDatabaseCallback)
                             .fallbackToDestructiveMigration()
                             .build();
@@ -52,7 +52,7 @@ public abstract class NoteDatabase extends RoomDatabase {
                 // If you want to start with more words, just add them.
                 NoteDao dao = INSTANCE.noteDao();
                 dao.deleteAll();
-                Note note = new Note("name", "age", "time", 0 , false);
+                Note note = new Note("0", "0", "0", 0 , true);
                 dao.insertAll(note);
             });
         }

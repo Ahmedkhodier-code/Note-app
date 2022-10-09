@@ -26,5 +26,5 @@
     <string name="logout">Logout</string>
     <string name="profile">Profile</string>
     <string name="more">More</string>
-    <string name="add_new">+ Add New</string>
+    <string name="add_new">+ Add New Note</string>
 </resources>

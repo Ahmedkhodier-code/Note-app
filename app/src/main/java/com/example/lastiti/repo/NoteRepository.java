@@ -21,7 +21,8 @@ public class NoteRepository {
     // See the BasicSample in the android-architecture-components repository at
     // https://github.com/googlesamples
     public NoteRepository(Application application) {
-        NoteDatabase db = Room.databaseBuilder(application, NoteDatabase.class, "notes_table").build();
+        NoteDatabase db = NoteDatabase.getDatabase(application);
+                //Room.databaseBuilder(application, NoteDatabase.class, "notes_table").build();
 //        AppDatabase db = AppDatabase.getDatabase(application);
         mNoteDao = db.noteDao();
         mAllNotes = mNoteDao.getAll();
