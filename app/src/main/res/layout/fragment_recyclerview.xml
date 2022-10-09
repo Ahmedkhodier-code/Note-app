@@ -9,7 +9,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".recyclerViewFragment.recyclerviewFragment">
+            tools:context=".recyclerViewFragment.recyclerviewFragment"
+            tools:ignore="UselessParent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

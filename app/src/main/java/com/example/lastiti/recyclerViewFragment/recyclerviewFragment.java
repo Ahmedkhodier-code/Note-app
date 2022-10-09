@@ -38,7 +38,6 @@ public class recyclerviewFragment extends Fragment {
         binding = FragmentRecyclerviewBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(NoteViewModel.class);
         setRecyclerViewLayoutManager();
-        setHasOptionsMenu(true);
         return binding.getRoot();
     }
 
